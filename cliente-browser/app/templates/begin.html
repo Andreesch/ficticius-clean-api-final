@@ -1,0 +1,96 @@
+
+<div class="row">
+	<div class="col-sm-4">
+		<form class="pt-5 pl-5 pr-5">
+
+		  <div class="form-group row">
+		    <label for="brand" class="col-sm-5 col-form-label">Nome</label>
+		    <div class="col-sm-7">
+		    	<input type="text" id="brand" class="form-control" placeholder="Ex. Carro 1" ng-model="name">
+		    </div>
+		  </div>
+		  <div class="form-group row">
+		    <label for="model" class="col-sm-5 col-form-label">Marca</label>
+		    <div class="col-sm-7">
+		    	<input type="text" id="model" class="form-control" placeholder="Ex. Hyundai" ng-model="brand">
+		    </div>
+		  </div>
+		  <div class="form-group row">
+		    <label for="model" class="col-sm-5 col-form-label">Modelo</label>
+		    <div class="col-sm-7">
+		    	<input type="text" id="model" class="form-control" placeholder="Ex. Veloster" ng-model="model">
+		    </div>
+		  </div>
+		  <div class="form-group row">
+		    <label for="manufactureYear" class="col-sm-5 col-form-label">Ano Fabricação</label>
+		    <div class="col-sm-7">
+		    	<input type="number" max-length="4" id="manufactureYear" class="form-control" placeholder="Ex. 2013" ng-model="manufactureYear">
+		    </div>
+		  </div>
+		  <div class="form-group row">
+		    <label for="kmInsideCity" class="col-sm-5 col-form-label">KM/L Cidade</label>
+		    <div class="col-sm-7">
+		    	<input type="number" id="kmInsideCity" class="form-control" placeholder="Ex. 10" ng-model="kmInsideCity">
+		    </div>
+		  </div>
+		  <div class="form-group row">
+		    <label for="kmOutsideCity" class="col-sm-5 col-form-label">KM/L Rodovias</label>
+		    <div class="col-sm-7">
+		    	<input type="number" id="kmOutsideCity" class="form-control" placeholder="Ex. 13" ng-model="kmOutsideCity">
+		    </div>
+		  </div>
+		  <button type="submit" class="btn btn-primary" ng-click="createVehicle()">Cadastrar</button>
+		</form>
+	</div>
+
+
+
+	<div class="col-sm-8 pt-5 pl-5 pr-5">
+
+		<div class="row col-sm-12">
+			<div class="form-group col-sm-3">
+				<label for="kmInsideCityParam">Percurso Cidade</label>
+			    <input type="number" class="form-control" id="kmInsideCityParam" ng-model="kmInsideCityParam" placeholder="Ex. 100">
+			</div>
+			<div class="form-group col-sm-3">
+				<label for="kmOutsideCityParam">Percurso Rodovias</label>
+			    <input type="number" class="form-control" id="kmOutsideCityParam" ng-model="kmOutsideCityParam" placeholder="Ex. 300">
+			</div>
+			<div class="form-group col-sm-3">
+				<label for="fuelPrice">Valor Combustível</label>
+			    <input type="number" class="form-control" id="fuelPrice" ng-model="fuelPrice" placeholder="Ex. 3.80">
+			</div>
+			<div class="form-group col-sm-3">
+				<label for="listVehicles"></label>
+		  		<button class="btn btn-primary form-control" id="listVehicles" ng-click="listVehicles()">Listar</button>
+			</div>
+
+		</div>
+
+		<table class="table">
+		  <!-- <caption>List of users</caption> -->
+		  <thead>
+		    <tr>
+		      <th scope="col">Nome</th>
+		      <th scope="col">Marca</th>
+		      <th scope="col">Modelo</th>
+		      <th scope="col">Ano Fabricação</th>
+		      <th scope="col">KM/L Cidade</th>
+		      <th scope="col">KM/L Rodovias</th>
+		      <th scope="col">Custo Viagem</th>
+		    </tr>
+		  </thead>
+		  <tbody>
+		    <tr ng-repeat="v in vehicles">
+		      <td>{{v.name}}</td>
+		      <td>{{v.brand}}</td>
+		      <td>{{v.model}}</td>
+		      <td>{{v.manufactureYear}}</td>
+		      <td>{{v.kmInsideCity}}</td>
+		      <td>{{v.kmOutsideCity}}</td>
+		      <td>{{ v.travelCost | currency : "R$ " : 2}}</td>
+		    </tr>
+		  </tbody>
+		</table>
+	</div>
+</div>
