@@ -7,7 +7,7 @@
 - Para testar a aplicação, utilize o swagger-ui (localhost:porta/swagger-ui.html) ou a aplicação web que disponibilizei no repositório.
 
 -- Rodando a aplicação web para testes
-- Utilizar o browser-sync ou rodar o comando python -m SimpleHTTPServer porta index.html na pasta CLIENTE-BROWSER.
+- Utilizar o browser-sync ou rodar o comando python -m SimpleHTTPServer porta na pasta CLIENTE-BROWSER.
 
 -- Tecnologias utilizadas
 
