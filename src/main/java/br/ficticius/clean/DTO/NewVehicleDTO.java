@@ -3,10 +3,8 @@ package br.ficticius.clean.DTO;
 import java.util.Date;
 
 import javax.validation.constraints.DecimalMin;
-import javax.validation.constraints.Min;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
 
 import br.ficticius.clean.model.Vehicle;
 import lombok.Data;
