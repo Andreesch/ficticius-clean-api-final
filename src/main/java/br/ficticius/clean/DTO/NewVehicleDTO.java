@@ -2,8 +2,11 @@ package br.ficticius.clean.DTO;
 
 import java.util.Date;
 
+import javax.validation.constraints.DecimalMin;
+import javax.validation.constraints.Min;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
 import br.ficticius.clean.model.Vehicle;
 import lombok.Data;
@@ -20,9 +23,11 @@ public class NewVehicleDTO {
 	private Integer manufactureYear;
 	
 	@NotNull(message = "{vehicle.kmInsideCity.not.empty}")
+	@DecimalMin(value= "1", message="{vehicle.kmInsideCity.invalidValue}")
 	private Double kmInsideCity;
 	
 	@NotNull(message = "{vehicle.kmOutsideCity.not.empty}")
+	@DecimalMin(value= "1", message="{vehicle.kmOutsideCity.invalidValue}")
 	private Double kmOutsideCity;
 	
 	/*
